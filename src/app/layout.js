@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/layout/Footer";
 import Sidebar from "./components/layout/Sidebar";
 import Navbar from "./components/layout/Navbar";
 
@@ -28,7 +27,6 @@ export default function RootLayout({ children }) {
           <Sidebar />
           <main className="flex-1">{children}</main>
         </div>
-        <Footer />
       </body>
     </html>
   );

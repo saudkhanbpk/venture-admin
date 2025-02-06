@@ -13,23 +13,23 @@ function Navbar() {
           <Image src={Logo} />
         </div>
 
-        <div className="flex gap-7 text-xl font-medium">
-          <Link href="" className="text-white">
+        <div className="flex gap-7 text-xl font-medium ">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             Home
           </Link>
-          <Link href="" className="text-white">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             About Us
           </Link>
-          <Link href="" className="text-white">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             Services
           </Link>
-          <Link href="" className="text-white">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             Portfolio
           </Link>
-          <Link href="" className="text-white">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             Career
           </Link>
-          <Link href="" className="text-white">
+          <Link href="" className="text-white border-b-2 border-transparent hover:border-white inline-block">
             Contact
           </Link>
         </div>
