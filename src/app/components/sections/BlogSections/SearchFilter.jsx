@@ -40,7 +40,7 @@ function SearchFilter() {
 
   return (
     <>
-      <div className="flex justify-between items-center px-8 py-20">
+      <div className="flex flex-wrap justify-between items-center md:px-8 px-5 md:py-20 py-8 gap-4">
         <div>
           <SearchInput />
         </div>
