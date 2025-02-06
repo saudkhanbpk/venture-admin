@@ -16,7 +16,7 @@ apiClient.interceptors.response.use(
 
 export const getRequest = async (endpoint, headers = {}) => {
   const response = await apiClient.get(endpoint, { headers });
-  return response.data;
+  return response;
 };
 
 export const postRequest = async (endpoint, data, headers = {}) => {
