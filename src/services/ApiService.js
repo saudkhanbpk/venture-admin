@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const createBlog = async (title, description, imageFile) => {
   const formData = new FormData();
@@ -19,7 +19,10 @@ export const createBlog = async (title, description, imageFile) => {
 
     return response.data;
   } catch (error) {
-    console.error("Error creating blog:", error.response?.data || error.message);
+    console.error(
+      "Error creating blog:",
+      error.response?.data || error.message
+    );
     throw error;
   }
 };
