@@ -1,5 +1,5 @@
 "use client";
-import { createBlog } from "@/services/ApiService";
+import { createBlog, postForm } from "@/services/ApiService";
 import React, { useState } from "react";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
@@ -8,6 +8,7 @@ const Page = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -32,14 +33,23 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    if (image) {
+      formData.append("file", image);
+    }
 
     try {
-      const response = await createBlog(title, description, image);
-      console.log("Blog Created:", response);
-      alert("Blog Created Successfully!");
+      const response = await postForm("/blog", formData);
+      if (response.success) {
+        alert("Blog created");
+      }
     } catch (error) {
-      console.error("Error submitting blog:", error);
-      alert("Failed to create blog.");
+      alert("can't create blog");
+    } finally {
+      setLoading(false);
     }
   };
 
