@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import SearchFilter from "../components/sections/BlogSections/SearchFilter";
 import BlogCards from "../components/sections/BlogSections/BlogCards";
@@ -26,11 +26,7 @@ const Blog = () => {
   return (
     <div>
       <SearchFilter />
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <BlogCards blogs={blogs} />
-      )}
+      {loading ? <p>Loading...</p> : <BlogCards blogs={blogs} />}
     </div>
   );
 };
